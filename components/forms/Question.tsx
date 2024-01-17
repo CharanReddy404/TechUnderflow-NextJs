@@ -53,6 +53,7 @@ const Question = ({ mongoUserId }: Props) => {
         content: values.explanation,
         tags: values.tags,
         author: JSON.parse(mongoUserId),
+        path: pathname,
       });
 
       router.push('/');
@@ -60,7 +61,6 @@ const Question = ({ mongoUserId }: Props) => {
     } finally {
       setIsSubmitting(false);
     }
-    console.log(values);
   }
 
   const handleInputKeyDown = (
